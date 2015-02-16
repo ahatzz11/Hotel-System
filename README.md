@@ -4,17 +4,16 @@ NDSU Class: Operating Systems Concepts (CSCI 474)
 
 This project was one of the most fun projects I have done in my entire Computer Science education at NDSU. It was a challenging project that tested my skills as a programmer, and really forced me to understand exactly what every line of code was doing. I started this program by setting up the threads and the required thread methods. I also created all the semaphores and global variables that I would need for the entire project. I worked with the 8 semaphores that we discussed in class. Below is a table discussing the semaphores that I use in my program:
 
-Semaphore		Function					Initial Value
-_______________________|_______________________________________________|_____________
-openRooms		Room capacity					5
-checkInLine		One person at check-in at a time		1
+Semaphore		Function									Initial Value
+_______________|___________________________________________|_____________
+openRooms		Room capacity								5
+checkInLine		One person at check-in at a time			1
 checkIn1		Used for guest to go to check-in desk		0
 checkIn2		Used for guest to receive room number		0
-CheckOutLine		One person at checkout at a time		1
+CheckOutLine	One person at checkout at a time			1
 checkOut1		Used for guest to go to checkout desk		0
 checkOut2		Used for guest to receive amount due		0
-checkOut3		Used for guest to pay amount			0
-
+checkOut3		Used for guest to pay amount				0
 
 Once I had my semaphores and threads in place, it was time to get started on the logic. This was the hardest part of the project. I drew out the guest threads alongside the check-in and checkout thread to see how the back and forth of semaphores would work. I went through a few iterations of my logic before I found the correct sequence. Once I had the starts and stops correct, I needed to figure out the best way to pass information between the threads. I ended up using global variables for most of the information in my program. This allows all of the threads to access information such as what guest has which room, and what the balance of that room is. To store this information I used arrays, where the index of the array correlates to the guest. So guest 0’s room is stores in guestsRoom[0] and their balance is stored in roomBalance[0].  
 
@@ -65,7 +64,6 @@ Calculate the balance for Guest X.
 Receive $Z from Guest X and complete the checkout.
 
 The output also counts the total number of guests, and the number of guests that went through each activity. Here is an example of this output:
-
 
 __________Final Notes__________
 I have this written inside of my code, but I will mention it here in my summary as well. I ran into this error during testing my project, and it seems to be fairly rare. When compiling the program, there will be one room that is booked 3 times, and another that is only booked once. I believe this is die to the random seed having one guest sleeping for 1 second, and another guest sleeping for 3 seconds. The guest that runs for 1 second is the first or second guest to go through the check-in process, and the guest that sleeps for 3 seconds is the last guest to go through. Due to these rare circumstances one room is booked and unbooked twice and booked again, before the other room is booked and unbooked. A solution to this issue is to remove the project.cpp file, recreate it, and recompile it. As I mentioned, this seems to be a rare circumstance dealing with the random seed and the rand() function. I have gone through the my program many times and it doesn’t seem to be an issue with the logic, but more of a coincidental circumstance.
