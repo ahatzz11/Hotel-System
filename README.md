@@ -6,16 +6,16 @@ NDSU Class: Operating Systems Concepts (CSCI 474)
 
 This project was one of the most fun projects I have done in my entire Computer Science education at NDSU. It was a challenging project that tested my skills as a programmer, and really forced me to understand exactly what every line of code was doing. I started this program by setting up the threads and the required thread methods. I also created all the semaphores and global variables that I would need for the entire project. I worked with the 8 semaphores that we discussed in class. Below is a table discussing the semaphores that I use in my program:
 
-Semaphore		Function									Initial Value
+Semaphore       Function                                    Initial Value
 _______________|___________________________________________|_____________
-openRooms		Room capacity								5
-checkInLine		One person at check-in at a time			1
-checkIn1		Used for guest to go to check-in desk		0
-checkIn2		Used for guest to receive room number		0
-CheckOutLine	One person at checkout at a time			1
-checkOut1		Used for guest to go to checkout desk		0
-checkOut2		Used for guest to receive amount due		0
-checkOut3		Used for guest to pay amount				0
+openRooms       Room capacity                               5
+checkInLine     One person at check-in at a time            1
+checkIn1        Used for guest to go to check-in desk       0
+checkIn2        Used for guest to receive room number       0
+CheckOutLine    One person at checkout at a time            1
+checkOut1       Used for guest to go to checkout desk       0
+checkOut2       Used for guest to receive amount due        0
+checkOut3       Used for guest to pay amount                0
 
 Once I had my semaphores and threads in place, it was time to get started on the logic. This was the hardest part of the project. I drew out the guest threads alongside the check-in and checkout thread to see how the back and forth of semaphores would work. I went through a few iterations of my logic before I found the correct sequence. Once I had the starts and stops correct, I needed to figure out the best way to pass information between the threads. I ended up using global variables for most of the information in my program. This allows all of the threads to access information such as what guest has which room, and what the balance of that room is. To store this information I used arrays, where the index of the array correlates to the guest. So guest 0’s room is stores in guestsRoom[0] and their balance is stored in roomBalance[0].  
 
