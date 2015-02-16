@@ -1,6 +1,6 @@
 Hotel Reservation Desk In Parallel
 Programmer: Alex Hatzenbuhler
-NDSU Class: Operating Systems Concepts (CSCI 474
+NDSU Class: Operating Systems Concepts (CSCI 474)
 
 This project was one of the most fun projects I have done in my entire Computer Science education at NDSU. It was a challenging project that tested my skills as a programmer, and really forced me to understand exactly what every line of code was doing. I started this program by setting up the threads and the required thread methods. I also created all the semaphores and global variables that I would need for the entire project. I worked with the 8 semaphores that we discussed in class. Below is a table discussing the semaphores that I use in my program:
 
