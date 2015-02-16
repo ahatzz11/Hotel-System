@@ -1,3 +1,5 @@
+note: please see file for proper formatting of readme.md
+
 Hotel Reservation Desk In Parallel
 Programmer: Alex Hatzenbuhler
 NDSU Class: Operating Systems Concepts (CSCI 474)
